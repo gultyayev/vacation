@@ -78,5 +78,10 @@
     "ts-node": "^8.9.1",
     "tslint": "^6.1.2",
     "typescript": "~3.8.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run affected:lint -- --parallel --uncommitted && npm run format:write -- --uncommitted"
+    }
   }
 }
