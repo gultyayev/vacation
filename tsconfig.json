@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@vacation/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@vacation/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@vacation/utils": ["libs/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
