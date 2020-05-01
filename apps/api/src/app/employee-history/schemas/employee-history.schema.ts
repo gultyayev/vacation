@@ -2,7 +2,7 @@ import * as mongoose from 'mongoose';
 
 export const EmployeeHistorySchema = new mongoose.Schema(
   {
-    employee: {
+    employeeId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Employee',
       required: true

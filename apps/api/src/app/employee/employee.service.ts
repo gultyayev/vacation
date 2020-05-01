@@ -16,7 +16,7 @@ export class EmployeeService {
   }
 
   async findAll() {
-    const list = await this.employeeModel.find().exec();
+    const list = await this.employeeModel.find().populate('history').exec();
 
     return {
       list,
