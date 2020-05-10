@@ -1,9 +1,5 @@
 @import 'variables';
 
-%count {
-  flex-basis: 55px;
-}
-
 .employee-list-item {
   display: flex;
   border: 1px solid #ccc;
@@ -27,14 +23,11 @@
     flex-shrink: 1;
   }
 
-  &__days-used {
-    @extend %count;
-  }
-
   &__days-available {
-    @extend %count;
+    flex-basis: 55px;
   }
 
   &__last-updated {
+    flex-basis: 96px;
   }
 }

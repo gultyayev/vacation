@@ -1,5 +1,5 @@
 export class CreateEmployeeDto {
-  readonly name: String;
+  readonly name: string;
   readonly startDate: Date;
   readonly endDate: Date;
 }

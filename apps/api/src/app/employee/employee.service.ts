@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CreateEmployeeDto } from './dto/create-employee.dto';
+import { EmployeeDto } from './dto/employee.dto';
 import { Employee } from './interfaces/employee.interface';
 
 @Injectable()
@@ -19,7 +20,7 @@ export class EmployeeService {
     const list = await this.employeeModel.find().populate('history').exec();
 
     return {
-      list,
+      list: list.map((employee) => new EmployeeDto(employee.toJSON())),
     };
   }
 }

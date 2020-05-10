@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { EmployeeListService } from './employee-list.service';
 
 @Component({
   selector: 'vacation-employee-list',
@@ -7,7 +8,9 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EmployeeListComponent implements OnInit {
-  constructor() {}
+  list$ = this.employeeListService.getList();
+
+  constructor(private readonly employeeListService: EmployeeListService) {}
 
   ngOnInit(): void {}
 }
