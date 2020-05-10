@@ -26,7 +26,10 @@
               "apps/vacation/src/assets"
             ],
             "styles": ["apps/vacation/src/styles.scss"],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": ["apps/vacation/src/app/scss/shared"]
+            }
           },
           "configurations": {
             "production": {

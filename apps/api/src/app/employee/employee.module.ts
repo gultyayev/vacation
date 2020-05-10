@@ -5,12 +5,14 @@ import { EmployeeService } from './employee.service';
 import { EmployeeSchema } from './schemas/employee.schema';
 
 @Module({
-  imports: [MongooseModule.forFeature([
-    {
-      name: 'Employee',
-      schema: EmployeeSchema
-    }
-  ])],
+  imports: [
+    MongooseModule.forFeature([
+      {
+        name: 'Employee',
+        schema: EmployeeSchema,
+      },
+    ]),
+  ],
   controllers: [EmployeeController],
   providers: [EmployeeService],
 })

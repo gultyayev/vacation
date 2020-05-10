@@ -1,0 +1,40 @@
+@import 'variables';
+
+%count {
+  flex-basis: 55px;
+}
+
+.employee-list-item {
+  display: flex;
+  border: 1px solid #ccc;
+
+  &__cell {
+    padding: 5px 10px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    min-width: 0;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &__img {
+  }
+
+  &__name {
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  &__days-used {
+    @extend %count;
+  }
+
+  &__days-available {
+    @extend %count;
+  }
+
+  &__last-updated {
+  }
+}

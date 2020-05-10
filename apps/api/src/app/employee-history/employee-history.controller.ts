@@ -4,8 +4,9 @@ import { EmployeeHistoryService } from './employee-history.service';
 
 @Controller('employee-history')
 export class EmployeeHistoryController {
-
-  constructor(private readonly employeeHistoryService: EmployeeHistoryService) {}
+  constructor(
+    private readonly employeeHistoryService: EmployeeHistoryService
+  ) {}
 
   @Post()
   async create(@Body() createEmployeeHistoryDto: CreateEmployeeHistoryDto) {

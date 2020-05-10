@@ -7,11 +7,14 @@ import { EmployeeHistory } from './interfaces/employee-history.interface';
 @Injectable()
 export class EmployeeHistoryService {
   constructor(
-    @InjectModel('EmployeeHistory') private readonly employeeHistoryModel: Model<EmployeeHistory>
+    @InjectModel('EmployeeHistory')
+    private readonly employeeHistoryModel: Model<EmployeeHistory>
   ) {}
 
   async create(createEmployeeHistoryDto: CreateEmployeeHistoryDto) {
-    const createdHistory = new this.employeeHistoryModel(createEmployeeHistoryDto);
+    const createdHistory = new this.employeeHistoryModel(
+      createEmployeeHistoryDto
+    );
     return createdHistory.save();
   }
 
