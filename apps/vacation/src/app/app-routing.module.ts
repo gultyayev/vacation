@@ -5,13 +5,14 @@ import { EmployeeListComponent } from './employee-list/employee-list.component';
 const routes: Routes = [
   {
     path: '',
-    component: EmployeeListComponent
+    component: EmployeeListComponent,
   },
   {
     path: 'employee',
-    loadChildren: () => import('./employee/employee.module').then(m => m.EmployeeModule)
-  }
-]
+    loadChildren: () =>
+      import('./employee/employee.module').then((m) => m.EmployeeModule),
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

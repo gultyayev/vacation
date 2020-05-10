@@ -5,9 +5,9 @@ import { EmployeeComponent } from './employee.component';
 const routes: Routes = [
   {
     path: ':id',
-    component: EmployeeComponent
-  }
-]
+    component: EmployeeComponent,
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
