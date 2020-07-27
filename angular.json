@@ -87,16 +87,14 @@
               "apps/vacation/tsconfig.app.json",
               "apps/vacation/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/vacation/**"]
+            "exclude": ["**/node_modules/**", "!apps/vacation/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "apps/vacation/jest.config.js",
-            "tsConfig": "apps/vacation/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "apps/vacation/src/test-setup.ts"
+            "passWithNoTests": true
           }
         }
       }
@@ -123,7 +121,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": ["apps/vacation-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/vacation-e2e/**"]
+            "exclude": ["**/node_modules/**", "!apps/vacation-e2e/**/*"]
           }
         }
       }
@@ -170,14 +168,13 @@
               "apps/api/tsconfig.app.json",
               "apps/api/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/api/**"]
+            "exclude": ["**/node_modules/**", "!apps/api/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "apps/api/jest.config.js",
-            "tsConfig": "apps/api/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -196,14 +193,13 @@
               "libs/api-interfaces/tsconfig.lib.json",
               "libs/api-interfaces/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/api-interfaces/**"]
+            "exclude": ["**/node_modules/**", "!libs/api-interfaces/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/api-interfaces/jest.config.js",
-            "tsConfig": "libs/api-interfaces/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
@@ -222,14 +218,13 @@
               "libs/utils/tsconfig.lib.json",
               "libs/utils/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/utils/**"]
+            "exclude": ["**/node_modules/**", "!libs/utils/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "libs/utils/jest.config.js",
-            "tsConfig": "libs/utils/tsconfig.spec.json",
             "passWithNoTests": true
           }
         }
