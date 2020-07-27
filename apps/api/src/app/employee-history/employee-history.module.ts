@@ -10,6 +10,7 @@ import { EmployeeHistorySchema } from './schemas/employee-history.schema';
       {
         name: 'EmployeeHistory',
         schema: EmployeeHistorySchema,
+        collection: 'employee-history',
       },
     ]),
   ],

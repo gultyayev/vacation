@@ -4,6 +4,7 @@ import {
   BaseDbDto,
   BaseDbDtoCtorInterface,
 } from '../../shared/dto/base-db.dto';
+import { CreateEmployeeHistoryDto } from '../../employee-history/dto/create-employee-history.dto';
 
 /** Employee DTO for response */
 export class EmployeeDto extends BaseDbDto {
@@ -37,6 +38,14 @@ export class EmployeeDto extends BaseDbDto {
 
     if (this.endDate) {
       this.endDate = moment(this.endDate).format(DATE_FORMAT);
+    }
+
+    if (this.history?.length) {
+      this.history = this.history.map((h) => ({
+        amount: h.amount,
+        type: h.type,
+        comment: h.comment,
+      }));
     }
   }
 }

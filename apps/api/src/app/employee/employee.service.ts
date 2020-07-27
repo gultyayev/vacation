@@ -17,10 +17,21 @@ export class EmployeeService {
   }
 
   async findAll() {
-    const list = await this.employeeModel.find().populate('history').exec();
+    const list = await this.employeeModel
+      .aggregate([
+        {
+          $lookup: {
+            from: 'employee-history',
+            localField: '_id',
+            foreignField: 'employeeId',
+            as: 'history',
+          },
+        },
+      ])
+      .exec();
 
     return {
-      list: list.map((employee) => new EmployeeDto(employee.toJSON())),
+      list: list.map((employee) => new EmployeeDto(employee)),
     };
   }
 }
